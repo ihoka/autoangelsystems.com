@@ -1,318 +1,357 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Angel System - Innovating the Future with AI</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #f5f5f7 0%, #e8d4f5 50%, #f0d9ff 100%);
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+          "Segoe UI", Roboto, sans-serif;
+        background: linear-gradient(
+          135deg,
+          #f5f5f7 0%,
+          #e8d4f5 50%,
+          #f0d9ff 100%
+        );
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
 
-        .hero-section {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            padding: 2rem;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(243, 229, 255, 0.3) 100%);
-        }
+      .hero-section {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.95) 0%,
+          rgba(243, 229, 255, 0.3) 100%
+        );
+      }
 
-        .header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 3rem;
-        }
+      .header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 3rem;
+      }
 
-        .logo {
-            height: 40px;
-            width: auto;
-            margin-right: 1rem;
-            object-fit: contain;
-            border-radius: 12px;
-            background: white;
-            padding: 4px;
-        }
+      .logo {
+        height: 40px;
+        width: auto;
+        margin-right: 1rem;
+        object-fit: contain;
+        border-radius: 12px;
+        background: white;
+        padding: 4px;
+      }
 
-        .brand-name {
-            font-size: 1rem;
-            color: #333;
-            font-weight: 500;
-        }
+      .brand-name {
+        font-size: 1rem;
+        color: #333;
+        font-weight: 500;
+      }
 
+      .main-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        align-items: center;
+      }
+
+      .left-section {
+        z-index: 2;
+      }
+
+      .main-title {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 700;
+        line-height: 1.1;
+        margin-bottom: 2rem;
+        background: linear-gradient(135deg, #2d2d2d 0%, #4a4a4a 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .subtitle {
+        background: linear-gradient(90deg, #8e44ad 0%, #c77ff2 100%);
+        color: white;
+        padding: 0.8rem 2rem;
+        border-radius: 30px;
+        display: inline-block;
+        font-size: 0.9rem;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        margin-bottom: 3rem;
+        box-shadow: 0 8px 20px rgba(142, 68, 173, 0.3);
+      }
+
+      .tagline {
+        font-size: 1.2rem;
+        color: #666;
+        margin-bottom: 3rem;
+        line-height: 1.6;
+      }
+
+      .features {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .feature {
+        display: flex;
+        align-items: flex-start;
+        gap: 1.5rem;
+        background: rgba(255, 255, 255, 0.8);
+        padding: 1.5rem;
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .feature:hover {
+        transform: translateX(10px);
+        box-shadow: 0 8px 30px rgba(142, 68, 173, 0.15);
+      }
+
+      .feature-icon {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, #e8d4f5 0%, #f0d9ff 100%);
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        flex-shrink: 0;
+        border: 2px solid rgba(142, 68, 173, 0.2);
+      }
+
+      .feature-content h3 {
+        font-size: 1.1rem;
+        color: #2d2d2d;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+      }
+
+      .feature-content p {
+        font-size: 0.9rem;
+        color: #666;
+        line-height: 1.5;
+      }
+
+      .guardian-text {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #2d2d2d;
+        margin: 3rem 0 2rem 0;
+      }
+
+      .contact-info {
+        background: rgba(255, 255, 255, 0.9);
+        padding: 2rem;
+        border-radius: 20px;
+        margin-top: 2rem;
+        backdrop-filter: blur(10px);
+      }
+
+      .contact-info h4 {
+        font-size: 1rem;
+        color: #666;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+      }
+
+      .contact-info p {
+        font-size: 0.9rem;
+        color: #999;
+        margin-bottom: 0.3rem;
+      }
+
+      .contact-info a {
+        color: #8e44ad;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .contact-info a:hover {
+        text-decoration: underline;
+      }
+
+      .right-section {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .robot-hand {
+        width: 100%;
+        max-width: 500px;
+        position: relative;
+      }
+
+      .hand-image {
+        width: 100%;
+        height: auto;
+        filter: drop-shadow(0 20px 40px rgba(142, 68, 173, 0.3));
+      }
+
+      .geometric-shape {
+        position: absolute;
+        top: -50px;
+        right: 50px;
+        width: 150px;
+        height: 150px;
+        background: linear-gradient(
+          135deg,
+          rgba(142, 68, 173, 0.1) 0%,
+          rgba(199, 127, 242, 0.1) 100%
+        );
+        clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: float 3s ease-in-out infinite;
+      }
+
+      .geometric-shape::before {
+        content: "";
+        position: absolute;
+        width: 80%;
+        height: 80%;
+        background: linear-gradient(
+          135deg,
+          rgba(142, 68, 173, 0.2) 0%,
+          rgba(199, 127, 242, 0.2) 100%
+        );
+        clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+      }
+
+      .circle-accent {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #8e44ad 0%, #c77ff2 100%);
+        border-radius: 50%;
+        opacity: 0.2;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      @media (max-width: 768px) {
         .main-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            align-items: center;
-        }
-
-        .left-section {
-            z-index: 2;
+          grid-template-columns: 1fr;
+          gap: 2rem;
         }
 
         .main-title {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 2rem;
-            background: linear-gradient(135deg, #2d2d2d 0%, #4a4a4a 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .subtitle {
-            background: linear-gradient(90deg, #8e44ad 0%, #c77ff2 100%);
-            color: white;
-            padding: 0.8rem 2rem;
-            border-radius: 30px;
-            display: inline-block;
-            font-size: 0.9rem;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            margin-bottom: 3rem;
-            box-shadow: 0 8px 20px rgba(142, 68, 173, 0.3);
-        }
-
-        .tagline {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 3rem;
-            line-height: 1.6;
-        }
-
-        .features {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .feature {
-            display: flex;
-            align-items: flex-start;
-            gap: 1.5rem;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 1.5rem;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .feature:hover {
-            transform: translateX(10px);
-            box-shadow: 0 8px 30px rgba(142, 68, 173, 0.15);
-        }
-
-        .feature-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #e8d4f5 0%, #f0d9ff 100%);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            flex-shrink: 0;
-            border: 2px solid rgba(142, 68, 173, 0.2);
-        }
-
-        .feature-content h3 {
-            font-size: 1.1rem;
-            color: #2d2d2d;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .feature-content p {
-            font-size: 0.9rem;
-            color: #666;
-            line-height: 1.5;
-        }
-
-        .guardian-text {
-            font-size: 2rem;
-            font-weight: 600;
-            color: #2d2d2d;
-            margin: 3rem 0 2rem 0;
-        }
-
-        .contact-info {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 2rem;
-            border-radius: 20px;
-            margin-top: 2rem;
-            backdrop-filter: blur(10px);
-        }
-
-        .contact-info h4 {
-            font-size: 1rem;
-            color: #666;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-
-        .contact-info p {
-            font-size: 0.9rem;
-            color: #999;
-            margin-bottom: 0.3rem;
-        }
-
-        .contact-info a {
-            color: #8e44ad;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .contact-info a:hover {
-            text-decoration: underline;
+          font-size: 2rem;
         }
 
         .right-section {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .robot-hand {
-            width: 100%;
-            max-width: 500px;
-            position: relative;
-        }
-
-        .hand-image {
-            width: 100%;
-            height: auto;
-            filter: drop-shadow(0 20px 40px rgba(142, 68, 173, 0.3));
+          order: -1;
         }
 
         .geometric-shape {
-            position: absolute;
-            top: -50px;
-            right: 50px;
-            width: 150px;
-            height: 150px;
-            background: linear-gradient(135deg, rgba(142, 68, 173, 0.1) 0%, rgba(199, 127, 242, 0.1) 100%);
-            clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: float 3s ease-in-out infinite;
+          right: 20px;
+          top: -30px;
+          width: 100px;
+          height: 100px;
         }
-
-        .geometric-shape::before {
-            content: '';
-            position: absolute;
-            width: 80%;
-            height: 80%;
-            background: linear-gradient(135deg, rgba(142, 68, 173, 0.2) 0%, rgba(199, 127, 242, 0.2) 100%);
-            clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
-        }
-
-        .circle-accent {
-            position: absolute;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #8e44ad 0%, #c77ff2 100%);
-            border-radius: 50%;
-            opacity: 0.2;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        @media (max-width: 768px) {
-            .main-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .main-title {
-                font-size: 2rem;
-            }
-
-            .right-section {
-                order: -1;
-            }
-
-            .geometric-shape {
-                right: 20px;
-                top: -30px;
-                width: 100px;
-                height: 100px;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="hero-section">
-        <header class="header">
-            <img src="doc/auto-angel-logo.jpeg" alt="Auto Angel Logo" class="logo">
-            <div class="brand-name">Angel | The Angel System</div>
-        </header>
+      <header class="header">
+        <img
+          src="doc/auto-angel-logo.jpeg"
+          alt="Auto Angel Logo"
+          class="logo"
+        />
+        <div class="brand-name">Angel | The Angel System</div>
+      </header>
 
-        <div class="main-content">
-            <div class="left-section">
-                <h1 class="main-title">Innovating the<br>Future with AI</h1>
-                <span class="subtitle">Revolution in Route Guidance Assistance</span>
-                <p class="tagline">Modernised, dynamic, and safety focused<br>real time reactive route guidance software</p>
+      <div class="main-content">
+        <div class="left-section">
+          <h1 class="main-title">Innovating the<br />Future with AI</h1>
+          <span class="subtitle">Revolution in Route Guidance Assistance</span>
+          <p class="tagline">
+            Modernised, dynamic, and safety focused<br />real time reactive
+            route guidance software
+          </p>
 
-                <div class="features">
-                    <div class="feature">
-                        <div class="feature-icon">🎙️</div>
-                        <div class="feature-content">
-                            <h3>AI voice communication</h3>
-                            <p>AI for real-time spoken guidance and communication</p>
-                        </div>
-                    </div>
-
-                    <div class="feature">
-                        <div class="feature-icon">🚗</div>
-                        <div class="feature-content">
-                            <h3>Learner driver assist</h3>
-                            <p>Your Copilot, navigating with you while you gain confidence</p>
-                        </div>
-                    </div>
-
-                    <div class="feature">
-                        <div class="feature-icon">🧠</div>
-                        <div class="feature-content">
-                            <h3>Insight IQ</h3>
-                            <p>Ecosystem safety protection while sympathising the drivers around you</p>
-                        </div>
-                    </div>
-                </div>
-
-                <h2 class="guardian-text">Your Guardian on the go</h2>
-
-                <div class="contact-info">
-                    <h4>Barry hiscott - founder.</h4>
-                    <p>register your interest by -</p>
-                    <p>07915228648</p>
-                    <p><a href="mailto:autoangelsystems@icloud.com">autoangelsystems@icloud.com</a></p>
-                </div>
+          <div class="features">
+            <div class="feature">
+              <div class="feature-icon">🎙️</div>
+              <div class="feature-content">
+                <h3>AI voice communication</h3>
+                <p>AI for real-time spoken guidance and communication</p>
+              </div>
             </div>
 
-            <div class="right-section">
-                <div class="geometric-shape"></div>
+            <div class="feature">
+              <div class="feature-icon">🚗</div>
+              <div class="feature-content">
+                <h3>Learner driver assist</h3>
+                <p>
+                  Your Copilot, navigating with you while you gain confidence
+                </p>
+              </div>
             </div>
+
+            <div class="feature">
+              <div class="feature-icon">🧠</div>
+              <div class="feature-content">
+                <h3>Insight IQ</h3>
+                <p>
+                  Ecosystem safety protection while sympathising the drivers
+                  around you
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="guardian-text">Your Guardian on the go</h2>
+
+          <div class="contact-info">
+            <h4>Barry Hiscott - founder.</h4>
+            <p>register your interest by -</p>
+            <p>07915228648</p>
+            <p>
+              <a href="mailto:autoangelsystems@icloud.com"
+                >autoangelsystems@icloud.com</a
+              >
+            </p>
+          </div>
         </div>
+
+        <div class="right-section">
+          <div class="geometric-shape"></div>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
