@@ -1,0 +1,4 @@
+[tools]
+claude = "latest"
+gh = "latest"
+lazygit = "latest"
