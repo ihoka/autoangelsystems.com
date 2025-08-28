@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://autoangelsystems.com/</loc>
+    <lastmod>2025-08-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://autoangelsystems.com/doc/auto-angel-logo.jpeg</image:loc>
+      <image:title>Auto Angel Systems Logo</image:title>
+      <image:caption>The Angel System - Your Guardian on the go</image:caption>
+    </image:image>
+  </url>
+</urlset>
